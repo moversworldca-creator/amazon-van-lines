@@ -3,6 +3,7 @@ import React from 'react';
 import { Truck, Mail, Briefcase, Star, ArrowRight, User, ShieldCheck, Heart, Map } from 'lucide-react';
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import aboutImage from "@/asset/about.webp";
 // --- Static Data ---
 
 const adminTeam = [
@@ -117,12 +118,12 @@ export default function AboutUsPage() {
               <div className="lg:w-1/2 relative">
                 <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-[1.01]">
                    <img 
-                    src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+                    src={aboutImage.src} 
                     alt="Amazon Van Lines Fleet" 
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-[500px] object-cover center"
                   />
                   {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
                   
                   {/* Floating Content on Image */}
                   <div className="absolute bottom-8 left-8 text-white max-w-sm">

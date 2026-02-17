@@ -3,6 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Localmove from "@/asset/localmovers.webp";
+import Longmove from "@/asset/longmove.webp";
+import Packing from "@/asset/packing.webp";
+import Storage from "@/asset/storage.webp";
+import Commercial from "@/asset/commercial.webp";
+import USMoves from "@/asset/usmover.webp";
+
 
 // ==========================================
 // 1. INDIVIDUAL SERVICE CONTENT COMPONENTS
@@ -180,7 +187,7 @@ const services: ServiceConfig[] = [
     id: 'local',
     title: 'Local Moves',
     heading: 'Reliable Local Moving Services',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: Localmove.src, // Using the image src as a string
     Component: LocalMovesContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
   },
@@ -188,7 +195,7 @@ const services: ServiceConfig[] = [
     id: 'long-distance',
     title: 'Long Distance',
     heading: 'Canada-Wide Long Distance Moves',
-    image: 'https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: Longmove.src,
     Component: LongDistanceContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   },
@@ -196,7 +203,7 @@ const services: ServiceConfig[] = [
     id: 'packing',
     title: 'Packing Supplies',
     heading: 'Professional Packing & Supplies',
-    image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: Packing.src,
     Component: PackingContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
   },
@@ -204,7 +211,7 @@ const services: ServiceConfig[] = [
     id: 'storage',
     title: 'Storage Services',
     heading: 'Secure Climate-Controlled Storage',
-    image: 'https://images.unsplash.com/photo-1562208920-d328905335e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: Storage.src,
     Component: StorageContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
   },
@@ -212,7 +219,7 @@ const services: ServiceConfig[] = [
     id: 'commercial',
     title: 'Commercial Moves',
     heading: 'Efficient Office Relocations',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: Commercial.src,
     Component: CommercialContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
   },
@@ -220,7 +227,7 @@ const services: ServiceConfig[] = [
     id: 'us-moves',
     title: 'US Moves',
     heading: 'Cross-Border Moves to the USA',
-    image: 'https://images.unsplash.com/photo-1548625361-987707e4063c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    image: USMoves.src,
     Component: USMovesContent,
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
   },
