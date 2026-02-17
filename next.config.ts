@@ -1,14 +1,11 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  
-  output: 'standalone', 
-  
-  /* config options here */
+  output: 'standalone', // THIS IS REQUIRED
   reactCompiler: true,
-
   images: {
-    unoptimized: true, 
+    unoptimized: true,
   },
 };
 
