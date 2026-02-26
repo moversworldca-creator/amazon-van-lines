@@ -120,7 +120,7 @@ export default function GetQuotePage() {
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-200 text-blue-800 w-5 h-5 rounded-full text-[10px] flex items-center justify-center font-bold mr-3 mt-0.5 shrink-0">3</span>
-                      You'll receive a detailed, transparent PDF estimate.
+                      You&apos;ll receive a detailed, transparent PDF estimate.
                     </li>
                   </ul>
                 </div>

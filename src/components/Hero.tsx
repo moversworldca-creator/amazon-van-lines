@@ -18,12 +18,12 @@ const Hero = () => {
 
   // State for submission status
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [minDate, setMinDate] = useState('');
-
-  useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    setMinDate(today);
-  }, []);
+  const [minDate] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return new Date().toISOString().split('T')[0];
+    }
+    return '';
+  });
 
   // 2. Handler for input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -222,7 +222,6 @@ const Hero = () => {
                         <input 
                           type="date" 
                           name="moveDate"
-                          min={minDate}
                           value={formData.moveDate}
                           onChange={handleChange}
                           required

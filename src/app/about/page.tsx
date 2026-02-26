@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Truck, Mail, Briefcase, Star, ArrowRight, User, ShieldCheck, Heart, Map } from 'lucide-react';
+import { Truck, Mail, Briefcase, Star, ArrowRight, User, ShieldCheck, Heart } from 'lucide-react';
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import aboutImage from "@/asset/about.webp";

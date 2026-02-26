@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, ShieldCheck, Truck, Facebook, Instagram, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { Phone, Menu, X, ShieldCheck, ChevronDown } from 'lucide-react';
 import Image from "next/image";
 import Logo from "@/asset/logo.png";
 import BBBlogo from "@/asset/bbb.png";
@@ -46,10 +47,6 @@ const Header = () => {
           </div>
           <div className="flex items-center space-x-4">
             <a href="https://www.bbb.org/ca/on/scarborough/profile/moving-services/amazon-van-lines-0107-1411717/#sealclick"><Image src={BBBlogo} alt="bbb Accredited image" className="h-10 w-auto"/></a>
-            {/* <div className="flex space-x-3">
-              <Facebook className="w-4 h-4 cursor-pointer hover:text-blue-300" />
-              <Instagram className="w-4 h-4 cursor-pointer hover:text-pink-400" />
-            </div> */}
           </div>
         </div>
       </div>
@@ -62,17 +59,11 @@ const Header = () => {
             <div className="mr-2 overflow-visible">
               <Image src={Logo} alt="Logo" className="w-auto h-14" />
             </div>
-            {/* <div>
-              <h1 className="text-xl md:text-2xl font-bold text-gray-800 tracking-tight leading-none">
-                AMAZON <span className="text-blue-700">VAN LINES</span>
-              </h1>
-              <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest">Moving Canada</p>
-            </div> */}
           </div>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/#" className="text-gray-700 font-medium hover:text-blue-700 transition">Home</a>
+            <Link href="/" className="text-gray-700 font-medium hover:text-blue-700 transition">Home</Link>
             <div 
               className="relative"
               onMouseEnter={() => setServicesMenuOpen(true)}
@@ -85,18 +76,18 @@ const Header = () => {
               {isServicesMenuOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md  py-2 w-56 z-10">
                   {services.map((service) => (
-                    <a key={service.name} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700 transition">
+                    <Link key={service.name} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700 transition">
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
-            <a href="/#offers" className="text-gray-700 font-medium hover:text-blue-700 transition">Offers</a>
-            <a href="/about" className="text-gray-700 font-medium hover:text-blue-700 transition">About Us</a>
-            <a href="/getQuote" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition shadow-lg transform hover:-translate-y-0.5">
+            <Link href="/#offers" className="text-gray-700 font-medium hover:text-blue-700 transition">Offers</Link>
+            <Link href="/about" className="text-gray-700 font-medium hover:text-blue-700 transition">About Us</Link>
+            <Link href="/getQuote" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition shadow-lg transform hover:-translate-y-0.5">
               Get A Quote
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -110,7 +101,7 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
           <div className="flex flex-col p-4 space-y-4">
-            <a href="/" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Home</a>
+            <Link href="/" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Home</Link>
             <div>
               <button 
                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)} 
@@ -122,23 +113,23 @@ const Header = () => {
               {isMobileServicesOpen && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-blue-100">
                   {services.map((service) => (
-                    <a 
+                    <Link 
                       key={service.name} 
                       href={service.href} 
                       className="block text-gray-700 hover:text-blue-700" 
                       onClick={() => setIsOpen(false)}
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
-            <a href="#offers" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Offers</a>
-            <a href="/about" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>About Us</a>
-            <a href="/getQuote" className="bg-orange-500 text-white text-center py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
+            <Link href="/#offers" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Offers</Link>
+            <Link href="/about" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>About Us</Link>
+            <Link href="/getQuote" className="bg-orange-500 text-white text-center py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
               Get Free Quote
-            </a>
+            </Link>
           </div>
         </div>
       )}
