@@ -18,6 +18,10 @@ import {
   PhoneCall
 } from 'lucide-react';
 
+import staff1 from "@/asset/staf-img-1.jpg";
+import staff2 from "@/asset/staf-img-2.jpg";
+import staff3 from "@/asset/staf-img-3.jpg";
+import baner from "@/asset/trust-baner.webp";
 // --- Interfaces ---
 interface ServiceProps {
   title: string;
@@ -166,7 +170,7 @@ const Services = () => {
                 <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                   {service.icon}
                 </div>
-                <span className="text-slate-200 text-5xl font-bold opacity-20 group-hover:opacity-10 transition-opacity">0{index + 1}</span>
+                <span className="text-slate-400 text-5xl font-bold opacity-20 group-hover:opacity-10 transition-opacity">0{index + 1}</span>
               </div>
               
               <h4 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-700 transition-colors">{service.title}</h4>
@@ -239,17 +243,17 @@ const Features = () => (
         <div className="lg:w-1/2 relative">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
             <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+              src={baner.src}
               alt="Moving Truck" 
               className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
             />
             {/* Floating Badge */}
-            <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl max-w-xs">
+            <div className="absolute bottom-6 right-6 bg-black/30 backdrop-blur-sm border border-white/20 p-4 rounded-xl max-w-xs">
               <div className="flex items-center gap-3 mb-2">
                 <div className="bg-green-500 rounded-full p-1"><CheckCircle className="w-4 h-4 text-white" /></div>
                 <span className="font-bold text-sm">Insured & Bonded</span>
               </div>
-              <p className="text-xs text-slate-300">We prioritize the safety of your belongings with full coverage.</p>
+              <p className="text-xs font-bold text-white">We prioritize the safety of your belongings with full coverage.</p>
             </div>
           </div>
           {/* Decorative box behind */}
@@ -351,6 +355,100 @@ const ServiceAreas = () => {
   );
 };
 
+
+const TeamSection = () => {
+  return (
+    <section className="py-24 bg-white relative">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Soft Peach Card Container */}
+        <div className="bg-[#fff8f3] rounded-[2rem] p-8 md:p-12 lg:p-16 relative overflow-hidden">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left: Text Content */}
+            <div className="max-w-xl z-10 relative">
+              <h2 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-[#2a3c68] mb-6 leading-[1.1] tracking-tight">
+                Our Team And <br className="hidden md:block"/> Booking Agents
+              </h2>
+              <div className="space-y-6 text-slate-800 text-lg leading-relaxed mb-10 font-medium">
+                <p>
+                  Whether your relocation is a local or long-distance move our sales experts will give accurate and customized quotes with the best price that fits your moving needs.
+                </p>
+                <p>
+                  Check with our team your move dates, and delivery times and submit your inventory to make your move stress-free.
+                </p>
+              </div>
+              <button className="bg-[#71c0df] hover:bg-[#5fa8c5] text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-md text-lg">
+                Know about our booking agents
+              </button>
+            </div>
+
+            {/* Right: Modern Graphic Collage */}
+            <div className="relative h-[450px] md:h-[550px] w-full flex-shrink-0 mt-12 lg:mt-0">
+              
+              {/* --- Decorative Elements matching the image --- */}
+              {/* Large light orange circle top right */}
+              <div className="absolute top-[8%] right-[12%] w-24 h-24 md:w-28 md:h-28 bg-[#fcb37f] rounded-full opacity-80"></div>
+              
+              {/* Medium solid orange circle center right */}
+              <div className="absolute top-[45%] right-[28%] w-14 h-14 md:w-16 md:h-16 bg-[#fad0b2] rounded-full opacity-90"></div>
+              
+              {/* Dark orange solid circle over Prakash (bottom right) */}
+              <div className="absolute bottom-[28%] right-[32%] w-16 h-16 md:w-20 md:h-20 bg-[#e76f23] rounded-full z-10"></div>
+              
+              {/* Decorative Arc Top Right */}
+              <svg className="absolute top-[20%] right-[-2%] w-16 h-16 text-[#e76f23]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 10 10 A 80 80 0 0 1 90 90" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+              </svg>
+
+              {/* Decorative Arc Bottom Left */}
+              <svg className="absolute bottom-[10%] left-[12%] w-20 h-20 text-[#e76f23]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 10 10 A 80 80 0 0 0 90 90" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
+
+
+              {/* --- Avatars --- */}
+              
+              {/* Avatar 1: Lakshmi (Largest, Top Left) */}
+              <div className="absolute top-[5%] left-[8%] md:left-[15%] flex flex-col items-center z-20">
+                <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg border-[6px] border-white">
+                  <img src={staff2.src} alt="Lakshmi" className="w-full h-full object-cover" />
+                </div>
+                <span className="mt-4 font-serif italic text-slate-800 text-[1.1rem]">Lakshmi</span>
+              </div>
+
+              {/* Avatar 2: Tharanikan (Medium, Right) */}
+              <div className="absolute top-[25%] right-[2%] md:right-[5%] flex flex-col items-center z-20">
+                <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200" alt="Tharanikan" className="w-full h-full object-cover" />
+                </div>
+                <span className="mt-3 font-serif italic text-slate-800 text-[1rem]">Tharanikan</span>
+              </div>
+
+              {/* Avatar 3: Bala (Medium, Bottom Left) */}
+              <div className="absolute bottom-[2%] left-[20%] md:left-[25%] flex flex-col items-center z-20">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                  <img src={staff1.src} alt="Bala" className="w-full h-full object-cover" />
+                </div>
+                <span className="mt-2 font-serif italic text-slate-800 text-[0.95rem]">Bala</span>
+              </div>
+
+              {/* Avatar 4: Prakash (Medium, Bottom Right) */}
+              <div className="absolute bottom-[8%] right-[10%] md:right-[15%] flex flex-col items-center z-20">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                  <img src={staff3.src} alt="Prakash" className="w-full h-full object-cover" />
+                </div>
+                <span className="mt-3 font-serif italic text-slate-800 text-[1rem]">Prakash</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
@@ -431,11 +529,12 @@ const FAQ = () => {
 const HomeSections = () => {
   return (
     <>
+      <Process />
       <Services />
       <Stats />
-      <Process />
       <Features />
       <ServiceAreas />
+      <TeamSection/>
       <FAQ />
     </>
   );

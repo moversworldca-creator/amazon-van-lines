@@ -12,10 +12,12 @@ const Hero = () => {
     moveDate: '',
     moveSize: '1-2 Bedrooms', // Default value
     fullName: '',
+    email: '',
     phone: ''
   });
 
-  // State for minimum date (today) to prevent past bookings
+  // State for submission status
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [minDate, setMinDate] = useState('');
 
   useEffect(() => {
@@ -33,11 +35,56 @@ const Hero = () => {
   };
 
   // 3. Handler for form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send 'formData' to your backend API here.
-    console.log("Form Submitted Successfully:", formData);
-    alert(`Quote Request Sent for ${formData.fullName}!\nCheck the console for the data object.`);
+    setStatus('submitting');
+
+    try {
+      // Split full name into first and last name for the backend
+      const nameParts = formData.fullName.trim().split(/\s+/);
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || 'N/A';
+
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/quote';
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: formData.email,
+          phone: formData.phone,
+          moveDate: formData.moveDate,
+          moveSize: formData.moveSize,
+          pickupCity: formData.fromZip,
+          dropoffCity: formData.toZip,
+          moveType: 'Quote Request', // Matches backend badge
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        // Reset form on success
+        setFormData({
+          fromZip: '',
+          toZip: '',
+          moveDate: '',
+          moveSize: '1-2 Bedrooms',
+          fullName: '',
+          email: '',
+          phone: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -215,6 +262,16 @@ const Hero = () => {
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm font-medium text-slate-900 transition-all" 
                     />
                     <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      autoComplete="email"
+                      placeholder="Email Address" 
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm font-medium text-slate-900 transition-all" 
+                    />
+                    <input 
                       type="tel" 
                       name="phone"
                       value={formData.phone}
@@ -228,10 +285,26 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center group">
-                <span>Calculate My Quote</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <button 
+                type="submit" 
+                disabled={status === 'submitting'}
+                className={`w-full ${status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 transition-all transform ${status !== 'submitting' && 'hover:-translate-y-1'} flex items-center justify-center group`}
+              >
+                <span>{status === 'submitting' ? 'Sending Request...' : 'Calculate My Quote'}</span>
+                {status !== 'submitting' && <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />}
               </button>
+
+              {status === 'success' && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm font-medium text-center animate-in fade-in slide-in-from-top-2">
+                  ✓ Quote request sent! We'll contact you shortly.
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm font-medium text-center">
+                  ✕ Failed to send. Please try again or call us.
+                </div>
+              )}
             </form>
              <div className="bg-slate-50 p-4 border-t border-slate-100 text-center">
                 <p className="text-[11px] text-slate-400">

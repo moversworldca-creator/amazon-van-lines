@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+**/node_modules/
+package-lock.json
+
+# Build & Output
+.next/
+out/
+build/
+dist/
+
+# Assets (Large/Non-text)
+src/asset/
+public/
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.ico
+
+# Logs & Environment
+*.log
+.env*
+.vercel
+
+# System
+.DS_Store
+.git/
