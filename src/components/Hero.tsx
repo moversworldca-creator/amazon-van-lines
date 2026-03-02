@@ -5,6 +5,7 @@ import Image from "next/image";
 import Banner from "@/asset/hero_baner.webp";
 
 const Hero = () => {
+  
   // 1. State for handling form data
   const [formData, setFormData] = useState({
     fromZip: '',
@@ -88,7 +89,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-slate-900 overflow-hidden min-h-screen flex items-center">
+    <section id='hero' className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-slate-900 overflow-hidden min-h-screen flex items-center">
         {/* Abstract Background Shapes for depth */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600 blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-600 blur-3xl opacity-20 animate-pulse delay-1000"></div>
@@ -104,7 +105,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-700 via-transparent to-slate-800/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container w-[95vw] mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           
           {/* Hero Text */}
@@ -118,11 +119,11 @@ const Hero = () => {
               We Move Your <br/>
               <span className="text-blue-500">World</span> Safely.
             </h1>
-            
-            <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
+          
+            <p className="text-lg font-bold text-white max-w-xl leading-relaxed">
               From local apartments to cross-country relocations, Amazon Van Lines delivers peace of mind. Trusted by thousands of Canadians for reliable, insured moving services.
             </p>
-            
+              <br/> <br />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-start space-x-3">
                 <div className="bg-blue-500/20 p-2 rounded-lg border border-blue-500/30">
@@ -130,7 +131,7 @@ const Hero = () => {
                 </div>
                 <div>
                     <h4 className="font-bold text-white">Fully Insured</h4>
-                    <p className="text-xs text-slate-400">Comprehensive coverage</p>
+                    <p className="text-xs text-white">Comprehensive coverage</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -139,7 +140,7 @@ const Hero = () => {
                 </div>
                 <div>
                     <h4 className="font-bold text-white">On-Time Guarantee</h4>
-                    <p className="text-xs text-slate-400">Punctual pickup & delivery</p>
+                    <p className="text-xs text-white">Punctual pickup & delivery</p>
                 </div>
               </div>
             </div>
@@ -156,7 +157,7 @@ const Hero = () => {
                 <div className="text-sm font-medium">
                     <span className="text-white">4.9/5</span>
                     <span className="text-slate-400 mx-2">•</span>
-                    <span className="text-slate-400">Based on 500+ Reviews</span>
+                    <span className="text-white">Based on 500+ Reviews</span>
                 </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
-      <div className="container mx-auto px-4">
+      <div className="container w-[95vw] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           
           {/* Company Info */}
@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>© 2024 Amazon Van Lines. All Rights Reserved.</p>
+          <p>© 2026 Amazon Van Lines. All Rights Reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <span className="flex items-center"><Star className="w-3 h-3 text-yellow-400 mr-1" /> Top Rated on Google</span>
             <span className="flex items-center"><ShieldCheck className="w-3 h-3 text-green-400 mr-1" /> BBB Accredited</span>

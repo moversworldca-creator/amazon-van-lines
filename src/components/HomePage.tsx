@@ -63,7 +63,7 @@ const serviceAreas: ProvinceData[] = [
 // --- Sub-Components ---
 
 const Stats = () => (
-  <div className="relative z-20 -mt-10 mb-10 container mx-auto px-4">
+  <div className="relative z-20 -mt-10 mb-10 container w-[85vw] mx-auto px-4">
     <div className="bg-slate-900 rounded-3xl shadow-2xl p-8 md:p-12 text-white overflow-hidden relative">
       {/* Decorative background circles */}
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
@@ -72,7 +72,7 @@ const Stats = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10 divide-x divide-slate-700/50">
         <div className="text-center px-4 group">
           <div className="mb-3 flex justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300"><Users className="w-8 h-8" /></div>
-          <div className="text-3xl md:text-5xl font-extrabold mb-1 tracking-tight">10k+</div>
+          <div className="text-3xl md:text-5xl font-extrabold mb-1 tracking-tight">20k+</div>
           <div className="text-slate-400 text-xs font-bold uppercase tracking-widest">Moves Done</div>
         </div>
         <div className="text-center px-4 group">
@@ -142,8 +142,8 @@ const Services = () => {
            style={{ backgroundImage: 'radial-gradient(#4b5563 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div className="container w-[95vw] mx-auto px-4 relative z-10">
+        <div className=" flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 pl-1 border-l-4 border-orange-500">Our Expertise</h2>
             <h3 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
@@ -190,7 +190,7 @@ const Services = () => {
 
 const Process = () => (
   <section className="py-24 bg-white relative">
-    <div className="container mx-auto px-4">
+    <div className="container w-[90vw] mx-auto px-4">
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h3 className="text-4xl font-extrabold text-slate-900 mb-4">Make It Happen In 4 Steps</h3>
         <p className="text-slate-500 text-lg">Our streamlined process ensures your move is organized and stress-free from the moment you contact us.</p>
@@ -236,7 +236,7 @@ const Features = () => (
         <div className="absolute top-0 -right-24 w-96 h-96 bg-orange-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
     </div>
 
-    <div className="container mx-auto px-4 relative z-10">
+    <div className="container w-[95vw] mx-auto px-4 relative z-10">
       <div className="flex flex-col lg:flex-row items-center gap-16">
         
         {/* Left: Image Composition */}
@@ -262,7 +262,7 @@ const Features = () => (
 
         {/* Right: Content */}
         <div className="lg:w-1/2">
-          <div className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-lg font-bold uppercase tracking-wider mb-6">
             Why Choose Us
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
@@ -292,9 +292,9 @@ const Features = () => (
           </div>
           
           <div className="mt-10">
-            <button className="bg-white text-slate-900 px-8 py-4 rounded-full shadow-lg hover:shadow-blue-500/30 hover:bg-blue-50 transition-all font-bold text-sm uppercase tracking-wide">
+            <a href="#hero"><button className="bg-white text-slate-900 px-8 py-4 rounded-full shadow-lg hover:shadow-blue-500/30 hover:bg-blue-50 transition-all font-bold text-sm uppercase tracking-wide">
               Start Your Move
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
@@ -307,7 +307,7 @@ const ServiceAreas = () => {
 
   return (
     <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-4">
+      <div className="container w-[95vw] mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Service Areas</h2>
           <h3 className="text-4xl font-extrabold text-slate-900">We Cover Canada</h3>
@@ -473,7 +473,7 @@ const FAQ = () => {
 
   return (
     <section className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4">
+      <div className="container w-[95vw] mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           <div className="lg:col-span-4">

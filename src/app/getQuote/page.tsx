@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Loader2
 } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 export default function GetQuotePage() {
   const [formData, setFormData] = useState({
@@ -90,7 +91,7 @@ export default function GetQuotePage() {
         </div>
       </div>
 
-      <main className="container mx-auto px-4 py-12 flex-grow">
+      <main className="container w-[95vw] mx-auto px-4 py-12 flex-grow">
         <div className="flex flex-col lg:flex-row gap-12">
           
           {/* LEFT COLUMN: The Quote Form or Success Message */}
@@ -413,11 +414,12 @@ export default function GetQuotePage() {
       </main>
 
       {/* Simple Footer for this page */}
-      <footer className="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 mt-auto">
+      {/* <footer className="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 mt-auto">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">© 2024 Amazon Van Lines. All Rights Reserved.</p>
         </div>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }
