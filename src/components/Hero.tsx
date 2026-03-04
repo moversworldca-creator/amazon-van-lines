@@ -46,7 +46,7 @@ const Hero = () => {
       const firstName = nameParts[0] || '';
       const lastName = nameParts.slice(1).join(' ') || 'N/A';
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/quote';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/quote' || 'http://amazonvanlines.ca:5000/api/quote';
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -74,7 +74,7 @@ const Hero = () => {
           fromZip: '',
           toZip: '',
           moveDate: '',
-          moveSize: '1-2 Bedrooms',
+          moveSize: '1 Bedrooms',
           fullName: '',
           email: '',
           phone: ''
@@ -99,17 +99,19 @@ const Hero = () => {
         <Image
           src={Banner} 
           alt="Moving Van" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover bg-top "
         />
-        <div className="absolute inset-0 bg-slate-100 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-700 via-transparent to-slate-800/50"></div>
+        <div className="absolute inset-0  mix-blend-multiply"></div>
+        <div className="absolute inset-0 "></div>
       </div>
 
       <div className="container w-[95vw] mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           
           {/* Hero Text */}
+          
           <div className="lg:w-1/2 text-white space-y-8">
+            <section>
             <div className="inline-flex items-center space-x-2 bg-blue-900/50 border border-blue-700/50 rounded-full pl-2 pr-4 py-1">
                 <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">NEW</span>
                 <span className="text-sm font-medium text-blue-100">Voted #1 Movers in 2024</span>
@@ -118,48 +120,10 @@ const Hero = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
               We Move Your <br/>
               <span className="text-blue-500">World</span> Safely.
-            </h1>
-          
-            <p className="text-lg font-bold text-white max-w-xl leading-relaxed">
-              From local apartments to cross-country relocations, Amazon Van Lines delivers peace of mind. Trusted by thousands of Canadians for reliable, insured moving services.
-            </p>
-              <br/> <br />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="flex items-start space-x-3">
-                <div className="bg-blue-500/20 p-2 rounded-lg border border-blue-500/30">
-                    <Shield className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                    <h4 className="font-bold text-white">Fully Insured</h4>
-                    <p className="text-xs text-white">Comprehensive coverage</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="bg-orange-500/20 p-2 rounded-lg border border-orange-500/30">
-                    <Clock className="w-6 h-6 text-orange-400" />
-                </div>
-                <div>
-                    <h4 className="font-bold text-white">On-Time Guarantee</h4>
-                    <p className="text-xs text-white">Punctual pickup & delivery</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Google Reviews */}
-            <div className="flex items-center space-x-4 pt-4 border-t border-slate-700/50">
-                <div className="flex text-yellow-400">
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                </div>
-                <div className="text-sm font-medium">
-                    <span className="text-white">4.9/5</span>
-                    <span className="text-slate-400 mx-2">•</span>
-                    <span className="text-white">Based on 500+ Reviews</span>
-                </div>
-            </div>
+              </h1>
+            </section>
+            <div className='h-[25vh]'></div>
+                        
           </div>
 
           {/* Form - Solid Card Design */}
@@ -238,11 +202,13 @@ const Hero = () => {
                           onChange={handleChange}
                           className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm font-medium text-slate-700 transition-all"
                         >
-                        <option>Studio</option>
-                        <option>1-2 Bedrooms</option>
-                        <option>3-4 Bedrooms</option>
-                        <option>5+ Bedrooms</option>
+                        <option>1 Bedrooms</option>
+                        <option>2 Bedrooms</option>
+                        <option>3 Bedrooms</option>
+                        <option>4 Bedrooms</option>
+                        <option>5 or More Bedrooms</option>
                         <option>Commercial</option>
+                        <option>Studio</option>
                         </select>
                     </div>
                 </div>
@@ -313,8 +279,11 @@ const Hero = () => {
              </div>
           </div>
         </div>
+        
       </div>
+      
     </section>
+    
   );
 };
 

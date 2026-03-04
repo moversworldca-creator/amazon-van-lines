@@ -15,13 +15,24 @@ import {
   Globe,
   Award,
   ArrowRight,
-  PhoneCall
+  PhoneCall,
+  Shield,
+  Star,
+  Headphones,
+  ClipboardList,
+  CalendarCheck,
+  House,
+  Milestone,
+  BoxSelect,
+  Warehouse,
+  Building2
 } from 'lucide-react';
 
 import staff1 from "@/asset/staf-img-1.jpg";
 import staff2 from "@/asset/staf-img-2.jpg";
 import staff3 from "@/asset/staf-img-3.jpg";
 import baner from "@/asset/trust-baner.webp";
+
 // --- Interfaces ---
 interface ServiceProps {
   title: string;
@@ -62,6 +73,58 @@ const serviceAreas: ProvinceData[] = [
 
 // --- Sub-Components ---
 
+const HeroHighlights = () => (
+  <div className="relative z-30 -mt-24 mb-12 container w-[90vw] mx-auto px-4">
+    <div className="bg-slate-900 rounded-[2rem] shadow-2xl p-8 md:p-12 text-white overflow-hidden relative border border-slate-800">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
+      
+      <div className="max-w-4xl relative z-10">
+        <p className="text-xl md:text-2xl font-bold text-white max-w-2xl leading-relaxed mb-10">
+          From local apartments to cross-country relocations, Amazon Van Lines delivers peace of mind. Trusted by thousands of Canadians for reliable, insured moving services.
+        </p>
+          
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+          <div className="flex items-start space-x-4">
+            <div className="bg-blue-500/20 p-3 rounded-xl border border-blue-500/30 flex-shrink-0">
+                <Shield className="w-7 h-7 text-blue-400" />
+            </div>
+            <div>
+                <h4 className="font-bold text-white text-lg">Fully Insured</h4>
+                <p className="text-sm text-slate-300">Comprehensive coverage for your valuables</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-4">
+            <div className="bg-orange-500/20 p-3 rounded-xl border border-orange-500/30 flex-shrink-0">
+                <Clock className="w-7 h-7 text-orange-400" />
+            </div>
+            <div>
+                <h4 className="font-bold text-white text-lg">On-Time Guarantee</h4>
+                <p className="text-sm text-slate-300">Punctual pickup and delivery across Canada</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Google Reviews */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-8 border-t border-slate-700/50">
+            <div className="flex text-yellow-400">
+                <Star className="w-6 h-6 fill-current" />
+                <Star className="w-6 h-6 fill-current" />
+                <Star className="w-6 h-6 fill-current" />
+                <Star className="w-6 h-6 fill-current" />
+                <Star className="w-6 h-6 fill-current" />
+            </div>
+            <div className="flex items-center text-base font-semibold">
+                <span className="text-white">4.9/5 Rating</span>
+                <span className="text-slate-500 mx-3">•</span>
+                <span className="text-white">Based on 500+ Verified Reviews</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const Stats = () => (
   <div className="relative z-20 -mt-10 mb-10 container w-[85vw] mx-auto px-4">
     <div className="bg-slate-900 rounded-3xl shadow-2xl p-8 md:p-12 text-white overflow-hidden relative">
@@ -100,37 +163,37 @@ const Services = () => {
     {
       title: "Local Moves",
       description: "Seamless transitions within your city. We handle packing to transport with extreme care.",
-      icon: <Truck className="w-8 h-8" />,
+      icon: <House className="w-8 h-8" />,
       delay: "0"
     },
     {
       title: "Long Distance",
       description: "Coast-to-coast relocations with expert logistics, inventory tracking and timely delivery.",
-      icon: <MapPin className="w-8 h-8" />,
+      icon: <Milestone className="w-8 h-8" />,
       delay: "100"
     },
     {
       title: "Packing Services",
       description: "Precision packing using industry-grade materials to ensure your valuables arrive intact.",
-      icon: <Box className="w-8 h-8" />,
+      icon: <BoxSelect className="w-8 h-8" />,
       delay: "200"
     },
     {
       title: "Storage Solutions",
       description: "Climate-controlled facilities monitored 24/7. Short or long-term secure access.",
-      icon: <Package className="w-8 h-8" />,
+      icon: <Warehouse className="w-8 h-8" />,
       delay: "0"
     },
     {
       title: "Commercial Moves",
       description: "Minimize downtime with our organized business relocation strategies for IT & furniture.",
-      icon: <CreditCard className="w-8 h-8" />,
+      icon: <Building2 className="w-8 h-8" />,
       delay: "100"
     },
     {
       title: "Cross Border (US)",
       description: "Expert customs clearance and logistics for smooth moves between Canada and the US.",
-      icon: <ShieldCheck className="w-8 h-8" />,
+      icon: <Globe className="w-8 h-8" />,
       delay: "200"
     }
   ];
@@ -189,37 +252,101 @@ const Services = () => {
 };
 
 const Process = () => (
-  <section className="py-24 bg-white relative">
-    <div className="container w-[90vw] mx-auto px-4">
+  <section className="py-24 bg-white relative overflow-hidden">
+    {/* Subtle background element */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] pointer-events-none">
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+    </div>
+
+    <div className="container w-[90vw] mx-auto px-4 relative z-10">
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <h3 className="text-4xl font-extrabold text-slate-900 mb-4">Make It Happen In 4 Steps</h3>
-        <p className="text-slate-500 text-lg">Our streamlined process ensures your move is organized and stress-free from the moment you contact us.</p>
+        <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-blue-100 shadow-sm">
+          Our Simple Workflow
+        </div>
+        <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+          Make It Happen In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 text-5xl">4 Steps</span>
+        </h3>
+        <p className="text-slate-500 text-lg leading-relaxed font-medium">
+          Our streamlined process ensures your move is organized and stress-free from the moment you contact us.
+        </p>
       </div>
 
       <div className="relative">
         {/* Connecting Line (Desktop) */}
-        <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="hidden md:block absolute top-16 left-0 w-full h-1 bg-slate-50 overflow-hidden">
+          <div className="w-full h-full bg-gradient-to-r from-blue-500 via-orange-500 to-green-500 opacity-20"></div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {[
-            { step: "01", title: "Contact Us", desc: "Reach out via phone or form to discuss details.", icon: <PhoneCall className="w-6 h-6" /> },
-            { step: "02", title: "Get Quote", desc: "Receive a transparent, fixed-price estimate.", icon: <CreditCard className="w-6 h-6" /> },
-            { step: "03", title: "Book Move", desc: "Lock in your date and let us plan the logistics.", icon: <CheckCircle className="w-6 h-6" /> },
-            { step: "04", title: "We Deliver", desc: "Relax as we transport and unpack your life.", icon: <Truck className="w-6 h-6" /> }
+            { 
+              step: "01", 
+              title: "Contact Us", 
+              desc: "Reach out via phone or form to discuss details.", 
+              icon: <Headphones className="w-8 h-8" />,
+              gradient: "from-blue-400 to-blue-600",
+              shadow: "shadow-blue-200"
+            },
+            { 
+              step: "02", 
+              title: "Get Quote", 
+              desc: "Receive a transparent, fixed-price estimate.", 
+              icon: <ClipboardList className="w-8 h-8" />,
+              gradient: "from-orange-400 to-orange-600",
+              shadow: "shadow-orange-200"
+            },
+            { 
+              step: "03", 
+              title: "Book Move", 
+              desc: "Lock in your date and let us plan the logistics.", 
+              icon: <CalendarCheck className="w-8 h-8" />,
+              gradient: "from-green-400 to-green-600",
+              shadow: "shadow-green-200"
+            },
+            { 
+              step: "04", 
+              title: "We Deliver", 
+              desc: "Relax as we transport and unpack your life.", 
+              icon: <Truck className="w-8 h-8" />,
+              gradient: "from-purple-400 to-purple-600",
+              shadow: "shadow-purple-200"
+            }
           ].map((item, i) => (
             <div key={i} className="relative group text-center md:text-left">
-              {/* Step Number Circle */}
-              <div className="relative mx-auto md:mx-0 z-10 w-24 h-24 bg-white rounded-full border-8 border-slate-50 flex items-center justify-center mb-6 shadow-sm group-hover:border-blue-50 group-hover:scale-110 transition-all duration-300">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-orange-500 transition-colors">
-                  {item.icon}
-                </div>
-                <div className="absolute -top-2 -right-2 bg-slate-900 text-white text-xs font-bold w-8 h-8 flex items-center justify-center rounded-full border-2 border-white">
-                  {item.step}
+              {/* Step Icon Container */}
+              <div className="relative mx-auto md:mx-0 z-10 w-32 h-32 mb-8 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3">
+                {/* Cartoon style bouncy background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-30 transition-opacity`}></div>
+                
+                <div className={`relative w-full h-full bg-white rounded-[2.2rem] border-4 border-slate-50 flex items-center justify-center shadow-xl ${item.shadow} group-hover:border-white transition-all overflow-hidden`}>
+                  {/* Subtle inner gradient circle */}
+                  <div className={`w-20 h-20 bg-gradient-to-br ${item.gradient} rounded-3xl flex items-center justify-center text-white shadow-lg group-hover:rotate-6 transition-transform duration-500`}>
+                    {item.icon}
+                  </div>
+                  
+                  {/* Number Badge */}
+                  <div className="absolute -top-1 -right-1 bg-slate-900 text-white text-xs font-black w-10 h-10 flex items-center justify-center rounded-2xl border-4 border-white shadow-md">
+                    {item.step}
+                  </div>
                 </div>
               </div>
               
-              <h4 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">{item.title}</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              <div className="space-y-3">
+                <h4 className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h4>
+                <p className="text-slate-500 font-medium leading-relaxed text-[15px]">
+                  {item.desc}
+                </p>
+              </div>
+              
+              {/* Desktop Decorative Arrow */}
+              {i < 3 && (
+                <div className="hidden lg:block absolute top-16 -right-6 text-slate-200">
+                  <ArrowRight className="w-6 h-6 animate-pulse" />
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -529,6 +656,7 @@ const FAQ = () => {
 const HomeSections = () => {
   return (
     <>
+      <HeroHighlights />
       <Process />
       <Services />
       <Stats />
