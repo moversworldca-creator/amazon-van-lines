@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Phone, Menu, X, ShieldCheck, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { FaCanadianMapleLeaf } from 'react-icons/fa';
 import Image from "next/image";
 import Logo from "@/asset/logo.png";
 import BBBlogo from "@/asset/bbb.png";
@@ -41,7 +42,7 @@ const Header = () => {
             </a>
             <span className="hidden md:inline">|</span>
             <span className="flex items-center font-bold text-25">
-              <ShieldCheck className="w-4 h-4 mr-1 text-yellow-400 " />
+              <FaCanadianMapleLeaf className="w-4 h-4 mr-1 text-red-400 " />
               A Canadian Company
             </span>
           </div>

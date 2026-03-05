@@ -399,10 +399,10 @@ const Features = () => (
           
           <div className="space-y-6">
             {[
-              { title: "Transparent Pricing", desc: "No hidden fees. Upfront quotes you can rely on completely." },
-              { title: "Climate-Controlled Storage", desc: "Keep your valuables safe in our 24/7 monitored facilities." },
-              { title: "Expert Packing Teams", desc: "Our team uses high-quality materials to protect your items." },
-              { title: "Guaranteed On-Time", desc: "We respect your schedule with punctual pickup and drop-off." }
+              { title: "Trusted Canadian Movers", desc: "Proudly serving all of Canada with a reputation built on reliability and trust." },
+              { title: "Coast-to-Coast Relocation", desc: "From Vancouver to Halifax, we handle long-distance moves with expert logistics." },
+              { title: "Full-Service Packing", desc: "Our professional Canadian team uses high-grade materials to protect your belongings." },
+              { title: "Reliable Storage Solutions", desc: "Secure, climate-controlled facilities across major Canadian cities for your peace of mind." }
             ].map((feature, i) => (
               <div key={i} className="flex group p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-slate-700">
                 <div className="mr-5 mt-1">
