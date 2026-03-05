@@ -46,7 +46,7 @@ const Hero = () => {
       const firstName = nameParts[0] || '';
       const lastName = nameParts.slice(1).join(' ') || 'N/A';
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://amazonvanlines.ca:5000/api/quote';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://amazonvanlines.ca:5000/api/quote';
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {

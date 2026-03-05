@@ -48,7 +48,7 @@ export default function GetQuotePage() {
     
     try {
           // 1. Send the data to the backend
-          const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/quote' || 'http://amazonvanlines.ca:5000/api/quote';
+          const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://amazonvanlines.ca:5000/api/quote';
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
