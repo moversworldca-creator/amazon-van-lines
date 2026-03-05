@@ -81,7 +81,7 @@ const HeroHighlights = () => (
       
       <div className="max-w-4xl relative z-10">
         <p className="text-xl md:text-2xl font-bold text-white max-w-2xl leading-relaxed mb-10">
-          From local apartments to cross-country relocations, Amazon Van Lines delivers peace of mind. Trusted by thousands of Canadians for reliable, insured moving services.
+          Reliable cross-border moving services between Canada and the US. We manage customs, logistics, and secure transportation for a stress-free long-distance move.
         </p>
           
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
