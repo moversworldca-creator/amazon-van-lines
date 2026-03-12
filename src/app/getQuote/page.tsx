@@ -47,13 +47,9 @@ export default function GetQuotePage() {
     setIsLoading(true);
     
     try {
-          // Determine API URL based on environment
-          const defaultApiUrl = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-            ? 'http://localhost:5000/api/quote'
-            : '/api/quote';
-            
-          const apiUrl = process.env.NEXT_PUBLIC_API_URL || defaultApiUrl;
-
+          // 1. Send the data to the backend
+          // const apiUrl = 'https://amazonvanlines.ca/api/quote/';
+          const apiUrl = '/api/quote'; // relative path
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
