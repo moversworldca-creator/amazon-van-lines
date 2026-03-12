@@ -77,9 +77,9 @@ const Header = () => {
               {isServicesMenuOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md  py-2 w-56 z-10">
                   {services.map((service) => (
-                    <Link key={service.name} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700 transition">
+                    <a key={service.name} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700 transition">
                       {service.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}
@@ -114,14 +114,14 @@ const Header = () => {
               {isMobileServicesOpen && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-blue-100">
                   {services.map((service) => (
-                    <Link 
+                    <a 
                       key={service.name} 
                       href={service.href} 
                       className="block text-gray-700 hover:text-blue-700" 
                       onClick={() => setIsOpen(false)}
                     >
                       {service.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}

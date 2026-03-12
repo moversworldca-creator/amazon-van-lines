@@ -46,7 +46,13 @@ const Hero = () => {
       const firstName = nameParts[0] || '';
       const lastName = nameParts.slice(1).join(' ') || 'N/A';
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://amazonvanlines.ca:5000/api/quote';
+      // Determine API URL based on environment
+      const defaultApiUrl = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:5000/api/quote'
+        : '/api/quote';
+        
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || defaultApiUrl;
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -89,7 +95,7 @@ const Hero = () => {
   };
 
   return (
-    <section id='hero' className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-slate-900 overflow-hidden min-h-screen flex items-center">
+    <section id='hero' className="relative pt-28 pb-12 md:pt-40 md:pb-32 sm:pb-42 bg-slate-900 overflow-hidden min-h-screen flex items-center">
         {/* Abstract Background Shapes for depth */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600 blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-600 blur-3xl opacity-20 animate-pulse delay-1000"></div>
@@ -105,45 +111,45 @@ const Hero = () => {
         <div className="absolute inset-0 "></div>
       </div>
 
-      <div className="container w-[95vw] mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           
           {/* Hero Text */}
           
-          <div className="lg:w-1/2 text-white space-y-8">
-            <section>
+          <div className="lg:w-1/2 text-white space-y-6 md:space-y-8">
+            <section className='pt-20'>
             <div className="inline-flex items-center space-x-2 bg-blue-900/50 border border-blue-700/50 rounded-full pl-2 pr-4 py-1">
                 <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">NEW</span>
                 <span className="text-sm font-medium text-blue-100">Voted #1 Movers in 2024</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
-              We Move Your <br/>
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
+              We Move Your <br className="hidden sm:block" />
               <span className="text-blue-500">World</span> Safely.
               </h1>
             </section>
-            <div className='h-[25vh]'></div>
+            <div className='hidden lg:block h-[20vh]'></div>
                         
           </div>
 
           {/* Form - Solid Card Design */}
           <div className="lg:w-[480px] w-full bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-slate-900/5">
-            <div className="bg-slate-50 p-6 border-b border-slate-100 flex justify-between items-center">
+            <div className="bg-slate-50 p-5 md:p-6 border-b border-slate-100 flex justify-between items-center">
               <div>
-                <h3 className="text-xl font-bold text-slate-900">Get a Free Estimate</h3>
-                <p className="text-slate-500 text-xs mt-1">Takes less than 30 seconds</p>
+                <h3 className="text-lg md:text-xl font-bold text-slate-900">Get a Free Estimate</h3>
+                <p className="text-slate-500 text-[10px] md:text-xs mt-0.5">Takes less than 30 seconds</p>
               </div>
-              <div className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              <div className="bg-green-100 text-green-700 text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 rounded-full flex items-center shadow-sm">
+                <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full mr-1.5 md:mr-2 animate-pulse"></span>
                 Available Now
               </div>
             </div>
             
             {/* 4. Wrapped in <form> tag */}
-            <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
-              <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="p-5 md:p-8 space-y-4 md:space-y-5">
+              <div className="space-y-3 md:space-y-4">
                 {/* Inputs */}
-                 <div className="grid grid-cols-2 gap-4">
+                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">From</label>
                     <div className="relative group">

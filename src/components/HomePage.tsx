@@ -544,13 +544,13 @@ const TeamSection = () => {
                 <span className="mt-4 font-serif italic text-slate-800 text-[1.1rem]">Lakshmi</span>
               </div>
 
-              {/* Avatar 2: Tharanikan (Medium, Right) */}
+              {/* Avatar 2: Tharanikan (Medium, Right)
               <div className="absolute top-[25%] right-[2%] md:right-[5%] flex flex-col items-center z-20">
                 <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden shadow-lg border-4 border-white">
                   <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200" alt="Tharanikan" className="w-full h-full object-cover" />
                 </div>
                 <span className="mt-3 font-serif italic text-slate-800 text-[1rem]">Tharanikan</span>
-              </div>
+              </div> */}
 
               {/* Avatar 3: Bala (Medium, Bottom Left) */}
               <div className="absolute bottom-[2%] left-[20%] md:left-[25%] flex flex-col items-center z-20">

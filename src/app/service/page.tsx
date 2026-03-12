@@ -433,6 +433,7 @@ const ServiceSection = () => {
       const serviceFromHash = services.find(s => s.id === hash);
       if (serviceFromHash) {
         setActiveService(serviceFromHash);
+        window.scrollTo(0, 0); // Instant scroll to top
       }
     };
 

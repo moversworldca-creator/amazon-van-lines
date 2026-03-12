@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { 
   Truck, 
@@ -43,11 +44,12 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-xl mb-6">Services</h4>
             <ul className="space-y-4 text-base font-semibold">
-              <li><a href="/services/local-moving" className="hover:text-orange-500 transition">Local Moving</a></li>
-              <li><a href="/services/long-distance-moving" className="hover:text-orange-500 transition">Long Distance Moving</a></li>
-              <li><a href="/services/commercial-relocation" className="hover:text-orange-500 transition">Commercial Relocation</a></li>
-              <li><a href="/services/storage-services" className="hover:text-orange-500 transition">Storage Services</a></li>
-              <li><a href="/services/packing-supplies" className="hover:text-orange-500 transition">Packing Supplies</a></li>
+              <li><a href="/service#local" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">Local Moving</a></li>
+              <li><a href="/service#long-distance" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">Long Distance Moving</a></li>
+              <li><a href="/service#packing" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">Packing Supplies</a></li>
+              <li><a href="/service#storage" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">Storage Services</a></li>
+              <li><a href="/service#commercial" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">Commercial Relocation</a></li>
+              <li><a href="/service#us-moves" onClick={() => { if(window.location.pathname === '/service') window.scrollTo(0, 0) }} className="hover:text-orange-500 transition">US Moves</a></li>
             </ul>
           </div>
 

@@ -29,8 +29,61 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "Amazon Van Lines",
+    "image": "https://amazonvanlines.com/asset/logo.png",
+    "@id": "https://amazonvanlines.com",
+    "url": "https://amazonvanlines.com",
+    "telephone": "1-833-838-9898",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3174 Eglinton Ave E Suite-202 a",
+      "addressLocality": "Scarborough",
+      "addressRegion": "ON",
+      "postalCode": "M1J 2H5",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.7394,
+      "longitude": -79.2311
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "07:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/amazonvanlines",
+      "https://www.instagram.com/amazonvanlines"
+    ],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Ontario" },
+      { "@type": "AdministrativeArea", "name": "Alberta" },
+      { "@type": "AdministrativeArea", "name": "British Columbia" },
+      { "@type": "AdministrativeArea", "name": "Manitoba" },
+      { "@type": "AdministrativeArea", "name": "Quebec" },
+      { "@type": "AdministrativeArea", "name": "Saskatchewan" }
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`} // Add Inter's variable
       >
