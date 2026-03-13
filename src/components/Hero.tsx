@@ -14,7 +14,8 @@ const Hero = () => {
     moveSize: '1-2 Bedrooms', // Default value
     fullName: '',
     email: '',
-    phone: ''
+    phone: '',
+    smsConsent: false
   });
 
   // State for submission status
@@ -28,10 +29,11 @@ const Hero = () => {
 
   // 2. Handler for input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target as HTMLInputElement;
+    const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: val
     }));
   };
 
@@ -63,6 +65,7 @@ const Hero = () => {
           pickupCity: formData.fromZip,
           dropoffCity: formData.toZip,
           moveType: 'Quote Request', // Matches backend badge
+          smsConsent: formData.smsConsent,
         }),
       });
 
@@ -75,10 +78,11 @@ const Hero = () => {
           fromZip: '',
           toZip: '',
           moveDate: '',
-          moveSize: '1 Bedrooms',
+          moveSize: '1-2 Bedrooms',
           fullName: '',
           email: '',
-          phone: ''
+          phone: '',
+          smsConsent: false
         });
       } else {
         setStatus('error');
@@ -214,7 +218,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                 {/* Contact */}
+                 {/* Contact Info */}
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Contact Info</label>
                   <div className="grid grid-cols-1 gap-3">
@@ -249,6 +253,22 @@ const Hero = () => {
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm font-medium text-slate-900 transition-all" 
                     />
                   </div>
+                </div>
+
+                {/* SMS Consent Checkbox */}
+                <div className="flex items-start space-x-3 pt-2">
+                  <input
+                    type="checkbox"
+                    id="smsConsent"
+                    name="smsConsent"
+                    checked={formData.smsConsent}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label htmlFor="smsConsent" className="text-[11px] leading-relaxed text-gray-500">
+                    By providing a phone number, I agree to receive transactional SMS with customer care updates about moving request with Amazon van lines. MSG & DATA rates may apply. Message frequency varies. Consent is not a condition of purchase. Reply ‘Stop’ to opt out at any time. See our <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a> and <a href="/Terms&Conditions" className="text-blue-600 hover:underline">Terms of Service</a>.
+                  </label>
                 </div>
               </div>
 

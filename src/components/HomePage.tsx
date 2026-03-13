@@ -74,7 +74,7 @@ const serviceAreas: ProvinceData[] = [
 // --- Sub-Components ---
 
 const HeroHighlights = () => (
-  <div className="relative z-30 -mt-24 mb-12 container w-[90vw] mx-auto px-4">
+  <div className="relative z-30 mt-5 mb-12 container w-[90vw] mx-auto px-4">
     <div className="bg-slate-900 rounded-[2rem] shadow-2xl p-8 md:p-12 text-white overflow-hidden relative border border-slate-800">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
