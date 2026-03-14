@@ -57,7 +57,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-xl mb-6">Quick Links</h4>
             <ul className="space-y-4 text-base font-semibold">
-              <li><a href="/get-your-free-quote" className="hover:text-orange-500 transition">Get a Quote</a></li>
+              <li><a href="/getQuote" className="hover:text-orange-500 transition">Get a Quote</a></li>
               <li><a href="/about" className="hover:text-orange-500 transition">About Us</a></li>
               <li><a href="/getQuote" className="hover:text-orange-500 transition">Contact Us</a></li>
               <li><a href="/privacy-policy" className="hover:text-orange-500 transition">Privacy Policy</a></li>

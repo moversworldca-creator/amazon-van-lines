@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google"; // Import Inter
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -88,6 +89,31 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`} // Add Inter's variable
       >
         {children}
+        <Script id="mb-js-params" strategy="afterInteractive">
+          {`
+            const tenantId = 208;
+            const branchId = 1;
+            try {
+              localStorage.setItem('TENANT_ID', tenantId);
+              localStorage.setItem('BRANCH_ID', branchId);
+            } catch (error) {
+              console.error("Failed to set TENANT_ID in localStorage", error);
+            }
+            window.mbCommonProps = {
+              TENANT_ID: tenantId,
+              BRANCH_ID: branchId,
+              COMPANY_MOVE_TYPES: ["RESIDENTIAL","COMMERCIAL","MILITARY"],
+              COMPANY_PHONE: "(587) 701-5576",
+              COMPANY_THANKYOUPAGE_URL: "/thank-you"
+            };
+          `}
+        </Script>
+        <Script
+          src="https://embed.elromco.com/integration.js"
+          data-moveboard-company-id="208"
+          data-moveboard-branch-id="1"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
