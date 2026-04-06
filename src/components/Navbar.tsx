@@ -86,6 +86,7 @@ const Header = () => {
             </div>
             {/* <Link href="/#offers" className="text-gray-700 font-medium hover:text-blue-700 transition">Offers</Link> */}
             <Link href="/about" className="text-gray-700 font-medium hover:text-blue-700 transition">About Us</Link>
+            <Link href="/contact-us" className="text-gray-700 font-medium hover:text-blue-700 transition">Contact Us</Link>
             <Link href="/getQuote" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition shadow-lg transform hover:-translate-y-0.5">
               Get A Quote
             </Link>
@@ -128,6 +129,7 @@ const Header = () => {
             </div>
             {/* <Link href="/#offers" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Offers</Link> */}
             <Link href="/about" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>About Us</Link>
+            <Link href="/contact-us" className="text-gray-800 font-medium" onClick={() => setIsOpen(false)}>Contact Us</Link>
             <Link href="/getQuote" className="bg-orange-500 text-white text-center py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
               Get Free Quote
             </Link>
