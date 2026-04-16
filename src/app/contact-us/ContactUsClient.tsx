@@ -318,7 +318,7 @@ export default function ContactUsClient() {
                   </div>
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xl font-bold text-slate-900 mb-3">{loc.city} Branch</h4>
+                      <h4 className="text-xl font-bold text-slate-900 mb-3">{loc.city}</h4>
                       <p className="text-slate-600 text-sm leading-relaxed mb-6">
                         Serving the {loc.city} region and surrounding communities with premium relocation services.
                       </p>

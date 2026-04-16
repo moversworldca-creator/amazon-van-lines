@@ -84,41 +84,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          id="mb-js-params"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const tenantId = 208;
-                const branchId = 1;
-                try {
-                  localStorage.setItem('TENANT_ID', tenantId);
-                  localStorage.setItem('BRANCH_ID', branchId);
-                } catch (error) {
-                  console.error("Failed to set TENANT_ID in localStorage", error);
-                }
-                window.mbCommonProps = {
-                  TENANT_ID: tenantId,
-                  BRANCH_ID: branchId,
-                  COMPANY_MOVE_TYPES: ["RESIDENTIAL","COMMERCIAL","MILITARY"],
-                  COMPANY_PHONE: "(587) 701-5576",
-                  COMPANY_THANKYOUPAGE_URL: "/thank-you"
-                };
-              })();
-            `
-          }}
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`} // Add Inter's variable
       >
         {children}
-        <Script
-          src="https://embed.elromco.com/integration.js"
-          data-moveboard-company-id="208"
-          data-moveboard-branch-id="1"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );

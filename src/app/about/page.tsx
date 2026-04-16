@@ -7,18 +7,19 @@ import aboutImage from "@/asset/about.webp";
 // --- Static Data ---
 
 const adminTeam = [
-  { name: "Satya Kumar", role: "Accounting Manager", email: "satyakumar@amazonvanlines.com" },
+  { name: "Prabhu", role: "Accounting Manager", email: "prabhu@amazonvanlines.com" },
   { name: "Vaka", role: "HR Manager", email: "vaka@amazonvanlines.com" },
   { name: "Bala", role: "Sales Manager", email: "bala@amazonvanlines.com" },
   { name: "Prakash", role: "Dispatch Manager", email: "prakash@amazonvanlines.com" },
   { name: "Lakshmi", role: "Sales Executive", email: "lakshmi@amazonvanlines.com" },
-  { name: "Tharanikan", role: "Sales Executive", email: "tharani@amazonvanlines.com" },
-  { name: "Pramoda", role: "Sales Executive", email: "pramoda@amazonvanlines.com" },
+  { name: "Suresh", role: "Sales Executive", email: "suresh@amazonvanlines.com" },
+  { name: "Pavani", role: "Sales Executive", email: "pavani@amazonvanlines.com" },
   { name: "Krish Ch", role: "Sales Executive", email: "krishna@amazonvanlines.com" },
-  { name: "Jaya Krishna", role: "Sales Executive", email: "jayakrishna@amazonvanlines.com" },
+  { name: "Joseph", role: "Sales Executive", email: "joseph@amazonvanlines.com" },
 ];
 
 const operationalTeam = [
+  { name: "Sasi", role: "Operational Head", email: "sasi@amazonvanlines.com" },
   { name: "Selva", role: "Driver, Helper", email: "selva@amazonvanlines.com" },
   { name: "Rahul", role: "Driver, Helper", email: "rahul@amazonvanlines.com" },
   { name: "Murugan", role: "Driver, Helper", email: "murugan@amazonvanlines.com" },
@@ -26,6 +27,8 @@ const operationalTeam = [
   { name: "ABU", role: "Driver, Helper", email: "abu@amazonvanlines.com" },
   { name: "Nithin", role: "Helper", email: "nithin@amazonvanlines.com" },
   { name: "Kumar", role: "Helper", email: "kumar@amazonvanlines.com" },
+  { name: "Vijay", role: "Driver", email: "vijay@amazonvanlines.com" },
+  { name: "Mashook", role: "Driver", email: "mashook@amazonvanlines.com" }
 ];
 
 const openPositions = [

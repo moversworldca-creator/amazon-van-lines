@@ -25,8 +25,7 @@ export default function FreeQuotePage() {
 
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="bg-white rounded-xl shadow-xl p-4 md:p-8 border border-gray-100 min-h-[600px]">
-          {/* Elromco Long Quote Form Integration Tag */}
-          <div className="text-black"  id="mb-single-page-form"></div>
+          <p className="text-center text-gray-500">The quote form is currently unavailable.</p>
         </div>
       </main>
 

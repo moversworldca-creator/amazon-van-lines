@@ -38,7 +38,10 @@ const Header = () => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <a href="tel:1-833-838-9898" className="flex items-center hover:text-blue-200 transition">
               <Phone className="w-4 h-4 mr-1" />
-              <b className="font-extrabold text-xl">Toll Free: 1-833-838-9898</b>
+              <b className="font-extrabold text-xl">Toll Free: 1-833-838-9898 </b>
+            </a> |
+            <a href="tel:587-707-5576" className="flex items-center hover:text-blue-200 transition">
+              <b className="font-extrabold text-xl ml-1">Local: 587-707-5576</b>
             </a>
             <span className="hidden md:inline">|</span>
             <span className="flex items-center font-bold text-25">

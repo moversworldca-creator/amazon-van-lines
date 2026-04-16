@@ -24,9 +24,13 @@ export default function ThankYouPage() {
       </div>
 
       <main className="flex-grow container mx-auto px-4 py-12">
-        <div className="bg-white rounded-xl shadow-xl p-8 md:p-12 border border-gray-100 max-w-4xl mx-auto min-h-[400px]">
-          {/* Elromco Thank You Page Results Integration Tag */}
-          <div className='text-black' id="mb-thank-you-page-form-result"></div>
+        <div className="bg-white rounded-xl shadow-xl p-8 md:p-12 border border-gray-100 max-w-4xl mx-auto min-h-[400px] text-center">
+           <p className="text-gray-600 text-lg mb-6">
+            Your request has been successfully submitted. One of our moving specialists will review your details and contact you shortly with a precise quote.
+          </p>
+          <div className="flex justify-center gap-4">
+            <a href="/" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Back to Home</a>
+          </div>
         </div>
       </main>
 
